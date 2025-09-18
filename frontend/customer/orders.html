@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+  <header>
+    <h1>🍔 KhudaLagse - Customer Portal</h1>
+    <nav>
+      <a href="customer_dashboard.html">Browse Restaurants</a>
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      <a href="orders.html" class="active">My Orders</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>📋 My Orders</h1>
+    </div>
+
+    <section class="orders-section">
+      <div id="ordersContainer">
+        <div class="loading-message">Loading your orders...</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="orders.js"></script>
+</body>
+</html>

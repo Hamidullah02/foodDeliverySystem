@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setup Your Restaurant - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <style>
+    .setup-container { max-width: 600px; margin: 2rem auto; }
+    .welcome-message { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 15px; text-align: center; margin-bottom: 2rem; }
+    .welcome-message h2 { margin-bottom: 1rem; font-size: 1.8rem; }
+    .restaurant-form { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); }
+    .form-section { margin-bottom: 2rem; }
+    .form-section h3 { color: #2c3e50; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #667eea; }
+    textarea { min-height: 100px; resize: vertical; }
+    .skip-link { text-align: center; margin-top: 1rem; }
+    .skip-link a { color: #667eea; text-decoration: none; font-size: 0.9rem; }
+    .skip-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="setup-container">
+    <div class="welcome-message">
+      <h2>🎉 Welcome to KhudaLagse!</h2>
+      <p>Let's set up your restaurant profile to start receiving orders</p>
+    </div>
+    
+    <form class="restaurant-form" id="restaurantSetupForm">
+      <div class="form-section">
+        <h3>Basic Information</h3>
+        <input type="text" name="name" placeholder="Restaurant Name *" required>
+        <input type="text" name="location" placeholder="Restaurant Address *" required>
+        <textarea name="description" placeholder="Describe your restaurant (cuisine type, specialties, etc.)"></textarea>
+      </div>
+      
+      <button type="submit" class="btn-primary w-full">
+        <span class="setup-text">Setup My Restaurant</span>
+        <span class="loading hidden">Loading...</span>
+      </button>
+      
+      <div class="skip-link">
+        <a href="#" onclick="skipSetup()">Skip for now (you can setup later)</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const API_BASE = "http://localhost/khudalagse/backend";
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+    if (!userData || userData.role !== 'restaurant') {
+      window.location.href = "../login.html";
+    }
+
+    document.getElementById("restaurantSetupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const btnText = submitBtn.querySelector('.setup-text');
+      const loading = submitBtn.querySelector('.loading');
+      
+      btnText.classList.add('hidden');
+      loading.classList.remove('hidden');
+      submitBtn.disabled = true;
+      
+      const formData = new FormData(e.target);
+      formData.append('owner_id', userData.id);
+
+      for (let [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+
+      try {
+        const response = await fetch(`${API_BASE}/restaurant/create.php`, {
+          method: "POST",
+          body: formData
+        });
+        
+        const responseText = await response.text();
+        let result;
+        try {
+          result = JSON.parse(responseText);
+        } catch (parseError) {
+          throw new Error(`Server returned non-JSON response: ${responseText.substring(0, 200)}...`);
+        }
+        
+        if (result.success) {
+          alert("Restaurant setup successful! Your restaurant is pending approval.");
+          window.location.href = "owner_dashboard.html";
+        } else {
+          alert(result.message || "Setup failed. Please try again.");
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert(`Error: ${error.message}`);
+      } finally {
+        btnText.classList.remove('hidden');
+        loading.classList.add('hidden');
+        submitBtn.disabled = false;
+      }
+    });
+
+    function skipSetup() {
+      if (confirm("Are you sure you want to skip restaurant setup?")) {
+        window.location.href = "owner_dashboard.html";
+      }
+    }
+  </script>
+</body>
+</html>

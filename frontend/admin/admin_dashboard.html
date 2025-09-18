@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>⚙️ KhudaLagse - Admin Portal</h1>
+    <nav>
+      <a href="admin_dashboard.html" class="active">Dashboard</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>Welcome, Admin!</h1>
+    </div>
+
+    <!-- System Stats -->
+    <section>
+      <h2>System Overview</h2>
+      <div class="grid grid-4">
+        <div class="stat-card">
+          <h3 id="totalUsers">0</h3>
+          <p>Total Users</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="totalRestaurants">0</h3>
+          <p>Total Restaurants</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="pendingApprovals">0</h3>
+          <p>Pending Approvals</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="totalOrders">0</h3>
+          <p>Total Orders</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pending Restaurant Approvals -->
+    <section>
+      <h2>Pending Restaurant Approvals</h2>
+      <div id="pendingRestaurants">
+        <div class="loading-message">Loading pending restaurants...</div>
+      </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section>
+      <h2>Recent Orders</h2>
+      <div id="recentOrders">
+        <div class="loading-message">Loading recent orders...</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

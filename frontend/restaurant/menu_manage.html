@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Management - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+  <header>
+    <h1>🏪 KhudaLagse - Restaurant Portal</h1>
+    <nav>
+      <a href="owner_dashboard.html">Dashboard</a>
+      <a href="menu_manage.html" class="active">Manage Menu</a>
+      <a href="orders_manage.html">Orders</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>🍽️ Menu Management</h1>
+      <button onclick="showAddItemModal()" class="btn-primary">Add New Item</button>
+    </div>
+
+    <!-- Menu Categories Filter -->
+    <section class="menu-actions">
+      <div class="category-pills" id="categoryFilters">
+        <button class="category-pill active" onclick="filterMenuItems('all')">All Items</button>
+      </div>
+    </section>
+
+    <!-- Menu Items -->
+    <section class="menu-items-section">
+      <div id="menuItemsContainer">
+        <div class="loading-message">Loading menu items...</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Add/Edit Menu Item Modal -->
+  <div id="menuItemModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Add Menu Item</h3>
+      <form id="menuItemForm">
+        <input type="hidden" id="menuItemId" name="menu_item_id">
+        
+        <div class="form-section">
+          <h4>Basic Information</h4>
+          <input type="text" name="name" placeholder="Item Name *" required>
+          <textarea name="description" placeholder="Item Description"></textarea>
+          <input type="number" name="price" placeholder="Price (৳) *" step="0.01" min="0" required>
+        </div>
+        
+        <div class="form-section">
+          <h4>Category & Availability</h4>
+          <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="appetizers">Appetizers</option>
+            <option value="main">Main Course</option>
+            <option value="desserts">Desserts</option>
+            <option value="beverages">Beverages</option>
+            <option value="snacks">Snacks</option>
+          </select>
+          
+          <div class="availability-toggle">
+            <label>Available for orders:</label>
+            <div class="toggle-switch">
+              <input type="checkbox" name="is_available" id="availabilityToggle" checked>
+              <span class="slider"></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" onclick="closeModal()" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">
+            <span class="save-text">Save Item</span>
+            <span class="loading hidden"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="menu_manage.js"></script>
+</body>
+</html>

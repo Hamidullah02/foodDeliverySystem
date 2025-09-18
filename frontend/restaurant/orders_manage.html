@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders Management - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+  <header>
+    <h1>🏪 KhudaLagse - Restaurant Portal</h1>
+    <nav>
+      <a href="owner_dashboard.html">Dashboard</a>
+      <a href="menu_manage.html">Manage Menu</a>
+      <a href="orders_manage.html" class="active">Orders</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>📋 Order Management</h1>
+      <div class="order-stats" id="orderStats">
+        <div class="stat-item">
+          <span class="stat-number" id="pendingCount">0</span>
+          <span class="stat-label">Pending</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="preparingCount">0</span>
+          <span class="stat-label">Preparing</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="deliveredCount">0</span>
+          <span class="stat-label">Delivered Today</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Status Filters -->
+    <section class="order-filters">
+      <div class="category-pills">
+        <button class="category-pill active" onclick="filterOrders('all')">All Orders</button>
+        <button class="category-pill" onclick="filterOrders('pending')">Pending</button>
+        <button class="category-pill" onclick="filterOrders('preparing')">Preparing</button>
+        <button class="category-pill" onclick="filterOrders('delivered')">Delivered</button>
+        <button class="category-pill" onclick="filterOrders('cancelled')">Cancelled</button>
+      </div>
+    </section>
+
+    <!-- Orders List -->
+    <section class="orders-section">
+      <div id="ordersContainer">
+        <div class="loading-message">Loading orders...</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="orders_manage.js"></script>
+</body>
+</html>

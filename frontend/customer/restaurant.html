@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+  <header>
+    <h1>🍔 KhudaLagse - Customer Portal</h1>
+    <nav>
+      <a href="customer_dashboard.html">Browse Restaurants</a>
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      <a href="orders.html">My Orders</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="menu-header">
+      <h2 id="restaurantName">Loading...</h2>
+      <p id="restaurantLocation"></p>
+      <p id="restaurantDescription"></p>
+    </div>
+
+    <div class="menu-categories" id="menuCategories">
+      <button class="category-btn active" onclick="filterMenu('all')">All Items</button>
+    </div>
+
+    <section class="menu-section">
+      <div id="menuItems" class="grid grid-1">
+        <div class="loading-message">Loading menu...</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="restaurant.js"></script>
+</body>
+</html>

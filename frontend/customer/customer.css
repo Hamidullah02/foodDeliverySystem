@@ -1,0 +1,382 @@
+/* Customer Dashboard Specific Styles */
+
+.search-bar {
+  flex: 1;
+  max-width: 400px;
+  margin-left: 2rem;
+}
+
+.search-bar input {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #e1e8ed;
+}
+
+.restaurants-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.restaurant-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.restaurant-info h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.restaurant-location {
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-location::before {
+  content: "📍";
+  margin-right: 0.5rem;
+}
+
+.restaurant-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-open {
+  background: #00b894;
+  color: white;
+}
+
+.status-closed {
+  background: #ff7675;
+  color: white;
+}
+
+.restaurant-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.restaurant-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.restaurant-actions button {
+  flex: 1;
+  padding: 0.8rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.empty-message h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+/* Menu Page Styles */
+.menu-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.menu-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-categories {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.menu-item-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  transition: all 0.3s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-info h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.menu-item-price {
+  color: #667eea;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.quantity-display {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Cart Styles */
+.cart-summary {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  position: sticky;
+  top: 100px;
+}
+
+.cart-total {
+  border-top: 2px solid #e1e8ed;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.cart-total-final {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  border-top: 2px solid #667eea;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-info h4 {
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.cart-item-restaurant {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Orders Page Styles */
+.order-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #667eea;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.order-info h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.order-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.order-items {
+  margin: 1rem 0;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-total {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e1e8ed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-bar {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .restaurant-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .restaurant-actions {
+    flex-direction: column;
+  }
+  
+  .menu-item-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menu-item-actions {
+    flex-direction: row;
+    min-width: auto;
+    justify-content: space-between;
+  }
+  
+  .menu-categories {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .category-btn {
+    flex-shrink: 0;
+  }
+}

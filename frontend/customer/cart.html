@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - KhudaLagse</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+  <header>
+    <h1>🍔 KhudaLagse - Customer Portal</h1>
+    <nav>
+      <a href="customer_dashboard.html">Browse Restaurants</a>
+      <a href="cart.html" class="active">Cart (<span id="cartCount">0</span>)</a>
+      <a href="orders.html">My Orders</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>🛒 Your Shopping Cart</h1>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 2rem;">
+      <!-- Cart Items -->
+      <section class="cart-items-section">
+        <div id="cartItems" class="card">
+          <div class="loading-message">Loading cart...</div>
+        </div>
+      </section>
+
+      <!-- Cart Summary -->
+      <section class="cart-summary">
+        <h3>Order Summary</h3>
+        <div id="cartSummary">
+          <div class="cart-total-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">৳0.00</span>
+          </div>
+          <div class="cart-total-row">
+            <span>Delivery Fee:</span>
+            <span id="deliveryFee">৳50.00</span>
+          </div>
+          <div class="cart-total-final">
+            <span>Total:</span>
+            <span id="total">৳50.00</span>
+          </div>
+        </div>
+
+        <form id="checkoutForm" class="mt-2">
+          <h4>Delivery Information</h4>
+          <textarea name="delivery_address" placeholder="Delivery Address *" required></textarea>
+          <input type="tel" name="phone" placeholder="Phone Number *" required>
+          
+          <button type="submit" class="btn-primary w-full">
+            <span class="checkout-text">Place Order</span>
+            <span class="loading hidden"></span>
+          </button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
