@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Restaurants</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>KhudaLagse - Admin Portal</h1>
+    <nav>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_user.html">Users</a>
+      <a href="admin_restaurants.html" class="active">Restaurants</a>
+      <button onclick="logout()" class="btn-danger">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>All Restaurants</h2>
+    <div id="restaurantsList">
+      <div class="loading-message">Loading restaurants...</div>
+    </div>
+  </div>
+
+  <script src="restaurants.js"></script>
+</body>
+</html>

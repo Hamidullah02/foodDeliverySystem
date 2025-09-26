@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     
     // Get menu items
-    $stmt = $conn->prepare("SELECT menu_item_id, name, description, price, category FROM menu_items WHERE restaurant_id = ? AND is_available = 1 ORDER BY category ASC, name ASC");
+    $stmt = $conn->prepare("SELECT menu_item_id, name, description, price, category, image_url FROM menu_items WHERE restaurant_id = ? AND is_available = 1 ORDER BY category ASC, name ASC");
     $stmt->bind_param("i", $restaurant_id);
     $stmt->execute();
     $result = $stmt->get_result();

@@ -111,8 +111,8 @@ input:focus, select:focus, textarea:focus {
 
 /* Buttons */
 button {
-  padding: 1rem 2rem;
-  margin: 0.5rem 0;
+  padding: 1rem 1rem;
+  margin: 0.5rem .5rem;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -121,7 +121,7 @@ button {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  min-width: 120px;
+  /* min-width: 120px; */
 }
 
 /* Button Variants */
@@ -256,27 +256,30 @@ button:active, .btn:active {
 
 /* Modal */
 .modal {
-  display: none;
+  display: none; 
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  animation: fadeIn 0.3s ease-out;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  overflow-y: auto; 
+  padding: 2rem 1rem;
 }
 
 .modal-content {
-  background: white;
-  margin: 5% auto;
-  padding: 2rem;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  animation: slideUp 0.3s ease-out;
+  background: #fff;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
+
 
 .close {
   position: absolute;

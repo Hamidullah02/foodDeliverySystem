@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Menu Management - KhudaLagse</title>
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="restaurant.css">
 </head>
 <body>
   <header>
-    <h1>🏪 KhudaLagse - Restaurant Portal</h1>
+    <h1>KhudaLagse - Restaurant Portal</h1>
     <nav>
       <a href="owner_dashboard.html">Dashboard</a>
       <a href="menu_manage.html" class="active">Manage Menu</a>
@@ -20,7 +20,7 @@
 
   <div class="container">
     <div class="dashboard-header">
-      <h1>🍽️ Menu Management</h1>
+      <h1>Menu Management</h1>
       <button onclick="showAddItemModal()" class="btn-primary">Add New Item</button>
     </div>
 
@@ -73,6 +73,12 @@
             </div>
           </div>
         </div>
+        <div class="form-section">
+            <h4>Item Image</h4>
+            <input type="file" id="imageInput" name="image" accept="image/*">
+            <small>Upload a photo of this menu item</small>
+        </div>
+
         
         <div class="form-actions">
           <button type="button" onclick="closeModal()" class="btn-secondary">Cancel</button>

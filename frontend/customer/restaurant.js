@@ -105,6 +105,10 @@ function displayMenuItems(items) {
   
   container.innerHTML = items.map(item => `
     <div class="menu-item-card">
+    <div class="menu-item-image">
+      <img src="${item.image_url ? item.image_url : '../default.png'}" 
+           alt="${item.name}" />
+    </div>
       <div class="menu-item-info">
         <h4>${item.name}</h4>
         <div class="menu-item-description">${item.description || ''}</div>

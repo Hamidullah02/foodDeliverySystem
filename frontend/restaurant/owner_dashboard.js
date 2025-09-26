@@ -9,14 +9,14 @@ if (!userData || userData.role !== 'restaurant') {
 // Global variables
 let restaurantData = null;
 
-// Initialize page
+// Initializepage
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("ownerName").textContent = userData.name;
   loadRestaurantInfo();
   setupEditForm();
 });
 
-// Load restaurant information
+// Load restaurant info
 async function loadRestaurantInfo() {
   try {
     const response = await fetch(`${API_BASE}/restaurant/info.php?owner_id=${userData.user_id}`);
@@ -35,7 +35,7 @@ async function loadRestaurantInfo() {
   }
 }
 
-// Show restaurant information
+// Show restaurant-info
 function showRestaurantInfo() {
   document.getElementById('setupNotice').classList.add('hidden');
   document.getElementById('restaurantInfo').classList.remove('hidden');
@@ -63,7 +63,7 @@ function showRestaurantInfo() {
   `;
 }
 
-// Show setup notice
+//setup notice
 function showSetupNotice() {
   document.getElementById('setupNotice').classList.remove('hidden');
   document.getElementById('restaurantInfo').classList.add('hidden');

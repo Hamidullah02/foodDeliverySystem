@@ -18,7 +18,6 @@ async function loadStats() {
   try {
     const response = await fetch(`${API_BASE}/admin/stats.php`);
     const result = await response.json();
-    
     if (result.success) {
       document.getElementById('totalUsers').textContent = result.data.total_users;
       document.getElementById('totalRestaurants').textContent = result.data.total_restaurants;

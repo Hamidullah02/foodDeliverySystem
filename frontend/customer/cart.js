@@ -47,6 +47,7 @@ function displayCart() {
       <h4>Restaurant ID: ${restaurantId}</h4>
       ${items.map(item => `
         <div class="cart-item">
+        <img src="${item.image_url || '../default.png'}" alt="${item.name}" class="cart-item-img" />
           <div class="cart-item-info">
             <h4>${item.name}</h4>
             <div class="cart-item-price">৳${parseFloat(item.price).toFixed(2)} each</div>

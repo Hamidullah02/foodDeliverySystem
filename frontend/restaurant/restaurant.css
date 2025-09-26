@@ -65,16 +65,25 @@
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   padding: 1.5rem;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   transition: all 0.3s ease;
   border-left: 4px solid #667eea;
 }
 
+
 .menu-item-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-info{
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .menu-item-info h4 {
@@ -102,6 +111,8 @@
 .menu-item-actions {
   display: flex;
   gap: 0.5rem;
+  min-width: 100px;
+  margin-left: auto;
   flex-direction: column;
   min-width: 100px;
 }
@@ -114,14 +125,34 @@
 
 /* Form Styles */
 .form-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .form-section h4 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #667eea;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+.form-section label {
+  font-size: 0.85rem;
+  color: #444;
+}
+.form-section input,
+.form-section select,
+.form-section textarea {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.form-actions {
+  margin-top: 1rem;
+  gap: 0.8rem;
+}
+
+.form-actions button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
 }
 
 .availability-toggle {
@@ -473,4 +504,18 @@ input:checked + .slider:before {
   .stat-card h3 {
     font-size: 2rem;
   }
+}
+
+.menu-item-image {
+  width: 150px;   
+  height: 150px;  
+  overflow: hidden;   
+  border-radius: 8px; 
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
 }

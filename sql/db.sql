@@ -29,6 +29,7 @@ CREATE TABLE menu_items (
     restaurant_id INT,
     name VARCHAR(100) NOT NULL,
     description TEXT,
+    image_url VARCHAR(255),
     price DECIMAL(10,2) NOT NULL,
     category VARCHAR(50) DEFAULT 'main',
     is_available BOOLEAN DEFAULT TRUE,

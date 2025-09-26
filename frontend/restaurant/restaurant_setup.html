@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Setup Your Restaurant - KhudaLagse</title>
   <link rel="stylesheet" href="../global.css">
   <style>
@@ -21,7 +21,7 @@
 <body>
   <div class="setup-container">
     <div class="welcome-message">
-      <h2>🎉 Welcome to KhudaLagse!</h2>
+      <h2>Welcome to KhudaLagse!</h2>
       <p>Let's set up your restaurant profile to start receiving orders</p>
     </div>
     
@@ -46,7 +46,6 @@
 
   <script>
     const API_BASE = "http://localhost/khudalagse/backend";
-
     const userData = JSON.parse(localStorage.getItem("user"));
     if (!userData || userData.role !== 'restaurant') {
       window.location.href = "../login.html";
